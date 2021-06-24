@@ -14,14 +14,17 @@ class Test_change_dir:
 
         Ожидаемый результат: возбуждение исключения TypeError
         """
-        assert False
+        
+        with pytest.raises(TypeError):
+            FileService.change_dir(path = None)
 
     def test_incorrect_type2(self):
         """Передать значение типа int
 
         Ожидаемый результат: возбуждение исключения TypeError
         """
-        assert False
+        with pytest.raises(TypeError):
+            FileService.change_dir(path = 1)
 
     def test_dot_dir(self):
         """Передать . в качестве значения,
